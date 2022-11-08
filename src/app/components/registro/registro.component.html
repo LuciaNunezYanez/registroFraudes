@@ -1,0 +1,117 @@
+<section>
+
+
+    <div class="row justify-content-center wrapper fadeInDown">
+        <div id="formContent" class="">
+            <div class="row">
+                <div class="col text-end text-secondary">
+                    <label>Usuario: {{this.nombre_usuario}}</label>
+                </div>
+            </div>
+            <div class="row fadeIn first">
+                <div class="col text-center">
+
+                    <img src="../../../assets/images/icon.png" id="icon" style="height: 80px; width: 80px; border-radius: 5px;" />
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div class="fadeIn first">
+                        <h4 class="text-center mb-3">REGISTRAR NÚMERO</h4>
+                        <form [formGroup]="formaRegistro" autocomplete="off" (ngSubmit)="registrar()">
+                            <div class="mb-3 row">
+                                <label for="numero" class="col-12 col-md-2 col-form-label ml-5">Teléfono *</label>
+                                <div class="col-12 col-md-10">
+                                    <input type="text" class="form-control" id="numero" formControlName="telefono" maxlength="20">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="entidad" class="col-12 col-md-2 col-form-label">Entidad *</label>
+                                <div class="col-12 col-md-10">
+                                    <select class="form-control" formControlName="entidad">
+                                    <!-- <option value="0">Seleccione</option> -->
+                                    <option *ngFor="let ent of entidades" value="{{ent.id}}" >
+                                        {{ent.id}} - {{ent.nombre}}
+            
+                                    </option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="municipio" class="col-12 col-md-2 col-form-label">Municipio *</label>
+                                <div class="col-12 col-md-10">
+                                    <select class="form-control" formControlName="municipio">
+                                    <!-- <option value="1000">Seleccione</option> -->
+                                    <option *ngFor="let mun of municipios" value="{{mun.id}}">
+                                        {{mun.id}} - {{mun.municipio}}
+            
+                                    </option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="identidad" class="col-12 col-md-2 col-form-label">Identidad *</label>
+                                <div class="col-12 col-md-10">
+                                    <select class="form-control" formControlName="identidad">
+                                    <!-- <option value="0">Seleccione</option> -->
+                                    <option *ngFor="let ident of identidades" value="{{ident.id}}">
+                                        {{ident.id}} - {{ident.identidad}}
+            
+                                    </option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="extorsion" class="col-12 col-md-2 col-form-label">Extorsión *</label>
+                                <div class="col-12 col-md-10">
+                                    <select class="form-control" formControlName="extorsion">
+                                    <!-- <option value="0">Seleccione</option> -->
+                                    <option *ngFor="let ext of extorsiones" value="{{ext.id}}">
+                                        {{ext.id}} - {{ext.extorsion}}
+            
+                                    </option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="mb-1 row">
+                                <label for="extorsionOtro" class="col-12 col-md-2 col-form-label">Extorsión otro</label>
+                                <div class="col-12 col-md-10">
+                                    <input type="text" class="form-control" id="extorsionOtro" formControlName="extorsionotro" maxlength="255">
+                                </div>
+                            </div>
+                            <div class="mb-1 row text-end">
+                                <label class="">* Campos obligatorios.</label>
+
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center">
+                                    <button class=" btn btn-outline-danger btn-sm m-2 " type="button" (click)="reiniciar() ">Limpiar todo</button>
+                                    <button class=" btn btn-outline-secondary m-2 " type="button" (click)="registrarSL() ">Registrar (sin limpiar)</button>
+                                    <button class="btn btn-success m-2" type="submit ">Registrar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-7">
+                <div class="row justify-content-end">
+                    <div class="col-4 col-md-3 col-xxl-2 justify-content-end align">
+
+                        <button class="btn btn-outline-info btn-sm mt-2 align-self-end justify-content-end" type="button" (click)="cerrarSesion()">Cerrar sesión</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+</section>
