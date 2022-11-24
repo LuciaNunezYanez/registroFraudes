@@ -11,6 +11,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ConsultaComponent } from './components/consulta/consulta.component';
+import { EstadisticaComponent } from './components/estadistica/estadistica.component';
 
 
 @NgModule({
@@ -18,7 +21,10 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     AppComponent,
     LoginComponent,
     RegistroComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    NavbarComponent,
+    ConsultaComponent,
+    EstadisticaComponent
   ],
   imports: [
     BrowserModule,

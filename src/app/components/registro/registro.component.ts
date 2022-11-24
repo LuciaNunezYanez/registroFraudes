@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { emitWarning } from 'process';
 import Swal from 'sweetalert2';
 import { NumerosService } from '../../services/numeros.service';
-import { LoginService } from '../../services/login.service';
+import { UsuariosService } from '../../services/usuarios.service';
 
 @Component({
   selector: 'app-registro',
@@ -104,7 +104,7 @@ export class RegistroComponent implements OnInit {
   ];
 
 
-  constructor(public fb: FormBuilder, private _registro: NumerosService, private _login: LoginService, private router: Router) {
+  constructor(public fb: FormBuilder, private _registro: NumerosService, private _login: UsuariosService, private router: Router) {
     this.inicializarForma();
     this.id = Number.parseInt(this._login.leerID());
     this.nombre_usuario = this._login.leerUsuario();

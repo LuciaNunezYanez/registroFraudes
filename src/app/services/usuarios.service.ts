@@ -5,11 +5,16 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class UsuariosService {
 
   url = environment.url;
 
   constructor(private _http: HttpClient) { }
+
+  // LOGIN 
+  // LOGIN 
+  // LOGIN 
+  // LOGIN 
 
   login(data: any){
     return this._http.post(`${this.url}/login/login`, data );
@@ -18,11 +23,13 @@ export class LoginService {
   cerrarSesion() {
     localStorage.removeItem('id');
     localStorage.removeItem('usuario');
+    localStorage.removeItem('tipo');
   }
 
-  guardarSesion(id_usuario, usuario){
+  guardarSesion(id_usuario, usuario, tipo){
     localStorage.setItem('id', id_usuario);
     localStorage.setItem('usuario', usuario);
+    localStorage.setItem('tipo', tipo);
   }
 
   leerID(){
@@ -32,4 +39,18 @@ export class LoginService {
   leerUsuario(){
     return localStorage.getItem('usuario');
   }
+
+  leerTipo(){
+    return localStorage.getItem('tipo');
+  }
+
+  // USUARIOS
+  // USUARIOS
+  // USUARIOS
+  // USUARIOS
+
+  getOperadores(){
+    return this._http.get(`${this.url}/login/operadores`);
+  }
+
 }

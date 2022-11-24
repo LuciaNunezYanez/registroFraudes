@@ -1,0 +1,80 @@
+<app-navbar></app-navbar>
+<section>
+    <div class="row justify-content-center wrapper fadeInDown">
+        <div id="formContent" class="">
+            <!-- <div class="row fadeIn first">
+                <div class="col text-center">
+
+                    <img src="../../../assets/images/icon.png" id="icon" style="height: 80px; width: 80px; border-radius: 5px;" />
+                </div>
+            </div> -->
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div class="fadeIn first">
+                        <h4 class="text-center mb-3">ESTADÍSTICA</h4>
+                        <form autocomplete="off" [formGroup]="formaEstadistica">
+                            <div class="row justify-content-center">
+                                <div class="col-8 col-md-10 col-xxl-8">
+                                    <div class="mb-3 row">
+                                        <label for="numero" class="col-3 col-xxl-3 col-xl-4 col-md-4 col-form-label ml-5">Fecha inicio: *</label>
+                                        <div class="col">
+                                            <input type="date" class="form-control" formControlName="fecha1">
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 row">
+                                        <label for="numero" class="col-3 col-xxl-3 col-xl-4 col-md-4 col-form-label ml-5">Fecha fin:</label>
+                                        <div class="col">
+                                            <input type="date" class="form-control" formControlName="fecha2">
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 row">
+                                        <label class="col-3 col-xxl-3 col-xl-4 col-md-4 col-form-label ml-5">Operador (a):</label>
+                                        <div class="col">
+                                            <select class="form-control" formControlName="operador">
+                                            <option value="-1">Todos</option>
+                                            <option *ngFor="let op of operadores" value="{{op.id_usuario}}">
+                                                {{op.nombre_usuario}}
+                    
+                                            </option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <div class="col text-center">
+                                            <!-- <button class=" btn btn-outline-danger btn-sm m-2 " type="button" (click)="reiniciar() ">Limpiar todo</button>
+                                            <button class=" btn btn-outline-secondary m-2 " type="button" (click)="registrarSL() ">Registrar (sin limpiar)</button> -->
+                                            <button class="btn btn-outline-success" (click)="ver()">Ver registros</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-center">
+                                <div class="col-8 col-md-10 col-xxl-8">
+
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" class="text-center">Operador (a):</th>
+                                                <th scope="col" class="text-center">Registros:</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let registro of registros">
+                                                <td class="text-center">{{registro.operador}}</td>
+                                                <td class="text-center">{{registro.registros}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

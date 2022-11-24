@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: 'http://10.11.118.91:8081'
-  // url: 'http://10.11.127.70:8081'
+  // url: 'http://10.11.118.91:8081'
+  url: 'http://10.11.127.70:8081'
 };
 

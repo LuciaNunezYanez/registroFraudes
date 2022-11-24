@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+<section>
+    <div class="row justify-content-center wrapper fadeInDown">
+        <div id="formContent" class="">
+            <!-- <div class="row fadeIn first">
+                <div class="col text-center">
+
+                    <img src="../../../assets/images/icon.png" id="icon" style="height: 80px; width: 80px; border-radius: 5px;" />
+                </div>
+            </div> -->
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div class="fadeIn first">
+                        <h4 class="text-center mb-3">CONSULTAR NÚMERO</h4>
+                        <form autocomplete="off" [formGroup]="formaNumero">
+                            <div class="mb-1 row justify-content-center">
+                                <!-- <label for="numero" class="col-12 col-md-2 col-form-label ml-5">Teléfono *</label> -->
+                                <div class="col-12 col-md-6">
+                                    <input type="text" class="form-control text-center" style="font-size: 20px;" id="numero" formControlName="numero">
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center">
+                                    <button class="btn btn-success mb-4" type="button" (click)="buscar()">Buscar</button>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-12">
+                                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+                                        <table class="table table-bordered table-striped mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col" class="">Número:</th>
+                                                    <th scope="col" class="">Entidad:</th>
+                                                    <th scope="col" class="">Municipio:</th>
+                                                    <th scope="col" class="">Identidad:</th>
+                                                    <th scope="col" class="">Clasificación:</th>
+                                                    <th scope="col" class="">Fecha:</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let num of numeros">
+                                                    <td class="">{{num.numero_telefonico}}</td>
+                                                    <td class="">{{num.clave_entidad}} - {{num.nombre_entidad}}</td>
+                                                    <td class="">{{num.clave_municipio}} - {{num.nombre_municipio}}</td>
+                                                    <td class="">{{num.id_identidad}} - {{num.identidad}}</td>
+                                                    <td class="">{{num.clasificacion}} - {{num.titulo_clasificacion}}</td>
+                                                    <td class="">{{num.fecha_subida | date: 'dd/MM/yyyy'}} </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
