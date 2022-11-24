@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { emitWarning } from 'process';
 import Swal from 'sweetalert2';
 import { NumerosService } from '../../services/numeros.service';
 import { UsuariosService } from '../../services/usuarios.service';
@@ -108,6 +107,11 @@ export class RegistroComponent implements OnInit {
     this.inicializarForma();
     this.id = Number.parseInt(this._login.leerID());
     this.nombre_usuario = this._login.leerUsuario();
+
+    // Comprobar que se inició sesión
+    if(this._login.leerID() === null){
+      this.router.navigate(['/login']);
+    }
   }
 
   ngOnInit(): void {

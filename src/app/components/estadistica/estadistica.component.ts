@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { EstadisticaService } from 'src/app/services/estadistica.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import Swal from 'sweetalert2';
@@ -15,11 +16,16 @@ export class EstadisticaComponent implements OnInit {
   registros = [];
   operadores = [];
 
-  constructor(private _estad: EstadisticaService, private _usuarios: UsuariosService, public fb: FormBuilder) {
+  constructor(private _estad: EstadisticaService, private _usuarios: UsuariosService, public fb: FormBuilder, private router: Router) {
     this.inicializarForma();
     _usuarios.getOperadores().subscribe((results: any)=>{
       this.operadores = results.operadores;
     });
+
+    // Comprobar que se inició sesión
+    if(this._usuarios.leerID() === null){
+      this.router.navigate(['/login']);
+    }
   }  
 
   ngOnInit(): void {
